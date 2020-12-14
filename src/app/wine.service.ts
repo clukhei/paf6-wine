@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http'
-import {WineDetail} from './wine.models'
+import {WineDetail, Wine} from './wine.models'
 
 
 
@@ -18,5 +18,9 @@ export class WineService {
     fetchWineDetails(country): Promise<WineDetail[]> {
         return this.http.get<WineDetail[]>(`/country/${country}`)
             .toPromise()
+    }
+
+    fetchAboutWine(wineId: string): Promise<any> {
+        return this.http.get<[]>(`/wine/${wineId}`).toPromise()
     }
 }

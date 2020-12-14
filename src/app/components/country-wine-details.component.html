@@ -1,1 +1,8 @@
-<p>country-wine-details works!</p>
+<div *ngFor="let w of wineDetails">
+  <mat-card (click)="go(w._id)">
+    <mat-card-content>
+      <p>{{ w.title }}</p>
+      <p>$ {{ w.price }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

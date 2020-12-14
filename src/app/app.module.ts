@@ -10,11 +10,13 @@ import { WineService } from './wine.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
+import { AboutWineComponent } from './components/about-wine.component';
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
-    CountryWineDetailsComponent
+    CountryWineDetailsComponent,
+    AboutWineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div *ngFor="let d of wine">
+  <mat-card>
+    <mat-card-title>{{ d.title }}</mat-card-title>
+    <mat-card-subtitle>{{ d.description }}</mat-card-subtitle>
+    <br />
+    <mat-card-content>
+      <p>Province: {{ d.province }}</p>
+      <p>Designation: {{ d.designation }}</p>
+    </mat-card-content>
+    <div class="flex">
+      <h1>{{ d.points }} points</h1>
+      <h1>${{ d.price }}</h1>
+    </div>
+  </mat-card>
+</div>

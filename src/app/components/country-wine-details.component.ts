@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WineDetail } from '../wine.models'
 import { WineService } from '../wine.service';
 
@@ -11,13 +11,18 @@ import { WineService } from '../wine.service';
 export class CountryWineDetailsComponent implements OnInit {
 
   wineDetails: WineDetail[] = []
-  constructor(private wineSvc: WineService, private activatedRoute: ActivatedRoute) { }
+  constructor(private wineSvc: WineService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const country = this.activatedRoute.snapshot.params['country']
     console.log(country)
     this.wineSvc.fetchWineDetails(country)
-      .then(res=> console.log(res))
+      .then(res=> {
+        this.wineDetails = res
+      })
   }
 
+  go(wineId: string){
+    this.router.navigate([`/wine/about/${wineId}`])
+  } 
 }
