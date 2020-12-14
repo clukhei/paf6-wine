@@ -11,7 +11,7 @@ app.use(cors());
 app.use(morgan("combined"));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
-
+app.use(express.static(__dirname +"/paf6-wine-frontend"))
 const PORT =
   parseInt(process.argv[2]) || parseInt(process.env.APP_PORT) || 3000;
 
